@@ -38,11 +38,6 @@ function renderTask() {
         taskList.appendChild(li);
     });
 }
-//funcion para eliminar tareas
-function deleteTask(taskDelete) {
-    tareas = tareas.filter(function (tarea) { return tarea !== taskDelete; });
-    renderTask();
-}
 taskForm.addEventListener('submit', function (event) {
     event.preventDefault();
     var description = taskInput.value.trim();
@@ -51,4 +46,10 @@ taskForm.addEventListener('submit', function (event) {
         taskInput.value = "";
     }
 });
+//funcion para eliminar tareas
+function deleteTask(taskDelete) {
+    tareas = tareas.filter(function (tarea) { return tarea !== taskDelete; });
+    renderTask();
+}
+
 renderTask();
